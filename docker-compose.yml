@@ -1,0 +1,73 @@
+version: "3.8"
+
+services:
+  # 로컬 개발을 위해 FastAPI 앱은 주석 처리
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: trademark-api
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ./app:/app/app
+  #     - ./data:/app/data
+  #   depends_on:
+  #     - elasticsearch
+  #   environment:
+  #     - ELASTICSEARCH_HOST=elasticsearch
+  #     - ELASTICSEARCH_PORT=9200
+  #     - ELASTICSEARCH_INDEX=trademarks
+  #   networks:
+  #     - trademark-network
+  #   restart: always
+
+  elasticsearch:
+    build:
+      context: ./elasticsearch
+      dockerfile: Dockerfile
+    container_name: trademark-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - trademark-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  kibana:
+    build:
+      context: ./kibana
+      dockerfile: Dockerfile
+    container_name: trademark-kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - trademark-network
+    restart: always
+
+networks:
+  trademark-network:
+    driver: bridge
+
+volumes:
+  elasticsearch-data:
+    driver: local

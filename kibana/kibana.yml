@@ -1,0 +1,17 @@
+server.name: kibana
+server.host: "0.0.0.0"
+
+# Elasticsearch 연결 설정
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# Kibana 서버 포트
+server.port: 5601
+
+# 로깅 설정
+logging.root.level: info
+
+# 시큐리티 설정 (개발용)
+xpack.security.enabled: false
+
+# 한국어 관련 설정 추가
+i18n.locale: "ko"

@@ -1,0 +1,60 @@
+# Python 관련
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 가상 환경
+venv/
+ENV/
+env/
+.env
+
+# IDE 관련
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.spyderproject
+.ropeproject
+
+# 로그 파일
+*.log
+logs/
+
+# 임시 파일들
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+
+# macOS 관련
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows 관련
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
