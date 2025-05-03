@@ -1,7 +1,7 @@
 """
-상표 인덱스 매핑 정의
+상표 검색에 최적화된 완전한 인덱스 매핑
 
-이 모듈은 Elasticsearch에서 상표 데이터를 저장할 인덱스의 매핑을 정의합니다.
+복잡하지만 강력한 오타 교정과 검색 기능을 제공하는 매핑 전략
 """
 import logging
 
@@ -11,76 +11,346 @@ logger = logging.getLogger(__name__)
 trademark_mapping = {
     "mappings": {
         "properties": {
-            # 상표명 필드 (한글/영문)
+            # 상표명 필드 (한글/영문) - 다중 분석기 활용
             "productName": {
                 "type": "text",
-                "analyzer": "nori",  # 한국어 형태소 분석기 사용
+                "analyzer": "nori_standard",  # 기본 검색용
+                "search_analyzer": "nori_search",  # 검색 시 사용
                 "fields": {
-                    "keyword": {"type": "keyword"},  # 정확히 일치하는 검색을 위한 키워드 필드
-                    "ngram": {  # 부분 검색을 위한 n-gram 필드
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    },
+                    "ngram": {
+                        "type": "text", 
+                        "analyzer": "nori_ngram",
+                        "search_analyzer": "nori_search_ngram"
+                    },
+                    "edge_ngram": {
                         "type": "text",
-                        "analyzer": "standard"  
+                        "analyzer": "nori_edge_ngram",
+                        "search_analyzer": "korean_standard"
+                    },
+                    "synonym": {
+                        "type": "text",
+                        "analyzer": "nori_synonym",
+                        "search_analyzer": "nori_synonym_search"
+                    },
+                    "no_decompound": {
+                        "type": "text",
+                        "analyzer": "nori_no_decompound"
                     }
                 }
             },
             "productNameEng": {
                 "type": "text",
-                "analyzer": "standard",
+                "analyzer": "english_standard",
+                "search_analyzer": "english_search",
                 "fields": {
-                    "keyword": {"type": "keyword"},
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    },
                     "ngram": {
                         "type": "text",
-                        "analyzer": "standard"
+                        "analyzer": "english_ngram", 
+                        "search_analyzer": "english_search_ngram"
+                    },
+                    "synonym": {
+                        "type": "text",
+                        "analyzer": "english_synonym",
+                        "search_analyzer": "english_synonym_search"
                     }
                 }
             },
             
-            # 출원/등록 번호
-            "applicationNumber": {"type": "keyword"},
-            "registrationNumber": {"type": "keyword"},
-            "publicationNumber": {"type": "keyword"},
-            "internationalRegNumbers": {"type": "keyword"},
-            "priorityClaimNumList": {"type": "keyword"},
+            # 출원/등록 번호 필드들
+            "applicationNumber": {
+                "type": "keyword",
+                "fields": {
+                    "search": {
+                        "type": "text",
+                        "analyzer": "number_analyzer"
+                    }
+                }
+            },
+            "registrationNumber": {
+                "type": "keyword",
+                "fields": {
+                    "search": {
+                        "type": "text",
+                        "analyzer": "number_analyzer"
+                    }
+                }
+            },
+            "publicationNumber": {
+                "type": "keyword"
+            },
+            "internationalRegNumbers": {
+                "type": "keyword"
+            },
+            "priorityClaimNumList": {
+                "type": "keyword"
+            },
             
             # 날짜 필드들
-            "applicationDate": {"type": "date", "format": "yyyyMMdd||yyyy-MM-dd"},
-            "publicationDate": {"type": "date", "format": "yyyyMMdd||yyyy-MM-dd"},
-            "registrationDate": {"type": "date", "format": "yyyyMMdd||yyyy-MM-dd"},
-            "internationalRegDate": {"type": "date", "format": "yyyyMMdd||yyyy-MM-dd"},
-            "priorityClaimDateList": {"type": "date", "format": "yyyyMMdd||yyyy-MM-dd"},
+            "applicationDate": {
+                "type": "date", 
+                "format": "yyyyMMdd||yyyy-MM-dd||strict_date_optional_time"
+            },
+            "publicationDate": {
+                "type": "date", 
+                "format": "yyyyMMdd||yyyy-MM-dd||strict_date_optional_time"
+            },
+            "registrationDate": {
+                "type": "date", 
+                "format": "yyyyMMdd||yyyy-MM-dd||strict_date_optional_time"
+            },
+            "internationalRegDate": {
+                "type": "date", 
+                "format": "yyyyMMdd||yyyy-MM-dd||strict_date_optional_time"
+            },
+            "priorityClaimDateList": {
+                "type": "date", 
+                "format": "yyyyMMdd||yyyy-MM-dd||strict_date_optional_time"
+            },
             
             # 상태 정보
-            "registerStatus": {"type": "keyword"},
+            "registerStatus": {
+                "type": "keyword",
+                "fields": {
+                    "text": {
+                        "type": "text",
+                        "analyzer": "korean_standard"
+                    }
+                }
+            },
             
-            # 코드 정보
-            "asignProductMainCodeList": {"type": "keyword"},
-            "asignProductSubCodeList": {"type": "keyword"},
-            "viennaCodeList": {"type": "keyword"}
+            # 코드 정보 필드들
+            "asignProductMainCodeList": {
+                "type": "keyword",
+                "fields": {
+                    "search": {
+                        "type": "text",
+                        "analyzer": "number_analyzer"
+                    }
+                }
+            },
+            "asignProductSubCodeList": {
+                "type": "keyword",
+                "fields": {
+                    "search": {
+                        "type": "text",
+                        "analyzer": "number_analyzer"
+                    }
+                }
+            },
+            "viennaCodeList": {
+                "type": "keyword"
+            }
         }
     },
     "settings": {
         "index": {
             "number_of_shards": 1,
-            "number_of_replicas": 0
+            "number_of_replicas": 0,
+            "max_ngram_diff": 9,
+            "refresh_interval": "5s"
         },
         "analysis": {
             "analyzer": {
-                "nori_analyzer": {
+                # 한국어 기본 분석기
+                "nori_standard": {
                     "type": "custom",
-                    "tokenizer": "nori_tokenizer",
-                    "filter": ["lowercase", "trim", "nori_part_of_speech"]
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "nori_readingform",
+                        "nori_part_of_speech_filter",
+                        "lowercase",
+                        "trim"
+                    ]
+                },
+                # 한국어 검색용 분석기 (오타 허용)
+                "nori_search": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "nori_readingform",
+                        "lowercase",
+                        "trim",
+                        "asciifolding"
+                    ]
+                },
+                # 한국어 n-gram 분석기
+                "nori_ngram": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "lowercase",
+                        "nori_readingform",
+                        "ngram_filter"
+                    ]
+                },
+                # 한국어 n-gram 검색용 분석기
+                "nori_search_ngram": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "lowercase",
+                        "nori_readingform"
+                    ]
+                },
+                # 한국어 edge n-gram 분석기
+                "nori_edge_ngram": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "lowercase",
+                        "nori_readingform",
+                        "edge_ngram_filter"
+                    ]
+                },
+                # 한국어 동의어 분석기
+                "nori_synonym": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "lowercase",
+                        "nori_readingform",
+                        "trademark_synonym"
+                    ]
+                },
+                # 한국어 동의어 검색용 분석기
+                "nori_synonym_search": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": [
+                        "lowercase",
+                        "nori_readingform",
+                        "trademark_synonym"
+                    ]
+                },
+                # 복합어 미분리 분석기
+                "nori_no_decompound": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_none",
+                    "filter": [
+                        "lowercase",
+                        "nori_readingform"
+                    ]
+                },
+                # 영문 기본 분석기
+                "english_standard": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "asciifolding",
+                        "trim"
+                    ]
+                },
+                # 영문 검색용 분석기
+                "english_search": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "asciifolding",
+                        "trim"
+                    ]
+                },
+                # 영문 n-gram 분석기
+                "english_ngram": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "english_ngram_filter"
+                    ]
+                },
+                # 영문 n-gram 검색용 분석기
+                "english_search_ngram": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase"
+                    ]
+                },
+                # 영문 동의어 분석기
+                "english_synonym": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "trademark_synonym"
+                    ]
+                },
+                # 영문 동의어 검색용 분석기
+                "english_synonym_search": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "trademark_synonym"
+                    ]
+                },
+                # 번호/코드용 분석기
+                "number_analyzer": {
+                    "type": "custom",
+                    "tokenizer": "keyword",
+                    "filter": ["lowercase", "trim"]
+                },
+                # 기본 한국어 분석기
+                "korean_standard": {
+                    "type": "custom",
+                    "tokenizer": "nori_tokenizer_standard",
+                    "filter": ["lowercase"]
                 }
             },
             "tokenizer": {
-                "nori_tokenizer": {
+                # 한글 토크나이저 (discard 모드)
+                "nori_tokenizer_standard": {
                     "type": "nori_tokenizer",
-                    "decompound_mode": "mixed"
+                    "decompound_mode": "discard"
+                },
+                # 한글 토크나이저 (분리 안함)
+                "nori_tokenizer_none": {
+                    "type": "nori_tokenizer",
+                    "decompound_mode": "none"
                 }
             },
             "filter": {
-                "nori_part_of_speech": {
+                # n-gram 필터
+                "ngram_filter": {
+                    "type": "ngram",
+                    "min_gram": 2,
+                    "max_gram": 5
+                },
+                # edge n-gram 필터
+                "edge_ngram_filter": {
+                    "type": "edge_ngram", 
+                    "min_gram": 1,
+                    "max_gram": 10
+                },
+                # 영문 n-gram 필터
+                "english_ngram_filter": {
+                    "type": "ngram",
+                    "min_gram": 2,
+                    "max_gram": 10
+                },
+                # 품사 필터
+                "nori_part_of_speech_filter": {
                     "type": "nori_part_of_speech",
-                    "stoptags": ["E", "IC", "J", "MAG", "MAJ", "MM", "SP", "SSC", "SSO", "SC", "SE", "XPN", "XSA", "XSN", "XSV"]
+                    "stoptags": [
+                        "E", "IC", "J", "MAG", "MAJ", "MM", "SP", 
+                        "SSC", "SSO", "SC", "SE", "XPN", "XSA", "XSN", "XSV"
+                    ]
+                },
+                # 동의어 필터
+                "trademark_synonym": {
+                    "type": "synonym",
+                    "synonyms_path": "analysis/synonym.txt",
+                    "updateable": True
                 }
             }
         }

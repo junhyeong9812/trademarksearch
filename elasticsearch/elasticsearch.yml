@@ -13,3 +13,4 @@ discovery.type: single-node
 # 색인 설정
 indices.query.bool.max_clause_count: 1024
 
+

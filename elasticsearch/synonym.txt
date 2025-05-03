@@ -1,0 +1,500 @@
+(주)네스고,NESGO. CO., LTD,ㄴㅅㄱ,ㅋ
+(주)컴퓨터정보사,C,ㅋㅍㅌㅈㅂㅅ,ㅋ
+가스트로피로,GASTROPHYLO,ㄱㅅㅌㄹㅍㄹ,ㄱ
+고려히피론,HIPYLON,ㄱㄹㅎㅍㄹ,ㅎ
+골드스트롱 내츄럴,GOLDSTRONG NATURAL,ㄱㄷㅅㅌㄹㅇ ㄴㅊㄹ,ㄱ ㄴ
+그레이스 컨트리 클럽,GRACE COUNTRY CLUB,ㄱㄹㅇㅅ ㅋㅌㄹ ㅋㄹ,ㄱ ㅋ ㅋ
+금강화학,KEUMKANG CHLOROSILICONE,ㄱㄱㅎㅎ,ㅋ ㅋ
+나도나도,NADONADO,ㄴㄷㄴㄷ,ㄴ
+나드리 하이맨,NADRI HIMAN,ㄴㄷㄹ ㅎㅇㅁ,ㄴ ㅎ
+나비드라,NAVIDLA,ㄴㅂㄷㄹ,ㄴ
+네티즌 보이스,Netizen Voice,ㄴㅌㅈ ㅂㅇㅅ,ㄴ ㅂ
+더말프로,DermalPro,ㄷㅁㅍㄹ,ㄷ
+동화자연 마루,DERMAl,ㄷㅎㅈㅇ ㅁㄹ,ㄷ
+디오니소스,DIONYSOSx,ㄷㅇㄴㅅㅅ,ㄷ
+도보망,Taobao.com,ㄷㅂㅁ,ㅌ
+디오스,DIOS,ㄷㅇㅅ,ㄷ
+동화,DONGWHA,ㄷㅎ,ㄷ
+두에플,duefle,ㄷㅇㅍ,ㄷ
+라니웰,RANIWELL,ㄹㄴㅇ,ㄹ
+랜드마스타,LAND MASTER,ㄹㄷㅁㅅㅌ,ㄹ ㅁ
+로얄가구,ROYAL FURNITURE,ㄹㅇㄱㄱ,ㄹ ㅍ
+루나,LUNA,ㄹㄴ,ㄹ
+마베르트,MARBERT,ㅁㅂㄹㅌ,ㅁ
+마리안,MARIAN,ㅁㄹㅇ,ㅁ
+메가맥스,MegaMax M,ㅁㄱㅁㅅ,ㅁ ㅁ
+모락모락,MORAKMORAK,ㅁㄹㅁㄹ,ㅁ
+모이스,MOISTY,ㅁㅇㅅ,ㅁ
+미라클,MIRACLE,ㅁㄹㅋ,ㅁ
+미라지,Mirage,ㅁㄹㅈ,ㅁ
+미스마일,MISMILE,ㅁㅅㅁㅇ,ㅁ
+바리다에이,VARIDAEA,ㅂㄹㄷㅇㅇ,ㅂ
+반들,VANDEL,ㅂㄷ,ㅂ
+보디 엑스사이즈,BODY EXERCISE,ㅂㄷ ㅇㅅㅅㅇㅈ,ㅂ ㅇ
+빙그레,BINGGRAE,ㅂㄱㄹ,ㅂ
+빙그레 빛나바,BINGGRAE BITNABA,ㅂㄱㄹ ㅂㄴㅂ,ㅂ ㅂ
+삼강탈렌트,SAMKANG TALENT,ㅅㄱㅌㄹㅌ,ㅅ ㅌ
+삼삼냉면,SAMSAM NAENGMYEON,ㅅㅅㄴㅁ,ㅅ ㄴ
+삼원하이샵시,SAMWON HIGHSHOP,ㅅㅇㅎㅇㅅㅅ,ㅅ ㅎ
+삼우사,SAMWOO CORP,ㅅㅇㅅ,ㅅ ㅋ
+상상오션,SANGSANG OCEAN,ㅅㅅㅇㅅ,ㅅ ㅇ
+서암식,SEOAM FOOD,ㅅㅇㅅ,ㅅ ㅍ
+셀핑어,C CellPinger,ㅅㅍㅇ,ㅋ ㅋ
+솔향기,SOLHYANGGI,ㅅㅎㄱ,ㅅ
+송송볼,SONGSONGBOL,ㅅㅅㅂ,ㅅ
+스캔들,SCANDAL,ㅅㅋㄷ,ㅅ
+스코브릭,Sco SCOBRICK,ㅅㅋㅂㄹ,ㅅ ㅅ
+스완이매트롱,Swanymatlong,ㅅㅇㅇㅁㅌㄹ,ㅅ
+스피로자이드,SPIROZIDE,ㅅㅍㄹㅈㅇㄷ,ㅅ
+스퍼트,SPURT,ㅅㅍㅌ,ㅅ
+승진제약,SEUNGJIN PHARMA,ㅅㅈㅈㅇ,ㅅ ㅍ
+씨사인,SEESINE,ㅆㅅㅇ,ㅅ
+아마빌레,Amabile,ㅇㅁㅂㄹ,ㅇ
+아바페,AVAPE,ㅇㅂㅍ,ㅇ
+앤젤,Angel,ㅇㅈ,ㅇ
+언지연,UNJIYON,ㅇㅈㅇ,ㅇ
+오다스,OJ ODAS,ㅇㄷㅅ,ㅇ ㅇ
+오렌지,Orange,ㅇㄹㅈ,ㅇ
+온보원,ONBOWON,ㅇㅂㅇ,ㅇ
+유로피안 클래스,EUROPEAN CLASS,ㅇㄹㅍㅇ ㅋㄹㅅ,ㅇ ㅋ
+윤텍,YoonTech,ㅇㅌ,ㅇ
+을보로,EULBORO,ㅇㅂㄹ,ㅇ
+이스펙스,ESFAX,ㅇㅅㅍㅅ,ㅇ
+이젠교육,EZEN EDUCATION,ㅇㅈㄱㅇ,ㅇ ㅇ
+주식회사금호,KUMHO & CO., INC.,ㅈㅅㅎㅅㄱㅎ,ㅋ
+주식회사 오성기전,OSUNG ELECTRONICS,ㅈㅅㅎㅅ ㅇㅅㄱㅈ,ㅇ ㅇ
+중앙디자인,PLANNING JAD,ㅈㅇㄷㅈㅇ,ㅍ ㅈ
+차크린,CHACRIN,ㅊㅋㄹ,ㅊ
+차무로,CHAMURO,ㅊㅁㄹ,ㅊ
+첵커 영양란,CHECKR NUTRIENT EGG,ㅊㅋ ㅇㅇㄹ,ㅊ ㄴ ㅇ
+초크토,CHOKTO,ㅊㅋㅌ,ㅊ
+최인,CHOI IN,ㅊㅇ,ㅊ ㅇ
+커플,COUPLE,ㅋㅍ,ㅋ
+코만코,COMANCO,ㅋㅁㅋ,ㅋ
+크라운비-ㄱ파이,CROWN VIC PIE,ㅋㄹㅇㅂㄱㅍㅇ,ㅋ ㅂ ㅍ
+타조눈,TAZO EYE,ㅌㅈㄴ,ㅌ ㅇ
+탐구선생님,INQUIRY TEACHER,ㅌㄱㅅㅅㄴ,ㅇ ㅌ
+토방 가마솥 곰탕,TOBANG POT GOMTANG,ㅌㅂ ㄱㅁㅅ ㄱㅌ,ㅌ ㅍ ㄱ
+토프렌,TOPLENE,ㅌㅍㄹ,ㅌ
+토토,TOTO,ㅌㅌ,ㅌ
+트링크,TRUNK,ㅌㄹㅋ,ㅌ
+트렁크,TRUNK,ㅌㄹㅋ,ㅌ
+팟시온,passion,ㅍㅅㅇ,ㅍ
+파가니니,Paganini,ㅍㄱㄴㄴ,ㅍ
+파카 크리스탈,PARKA CRYSTAL,ㅍㅋ ㅋㄹㅅㅌ,ㅍ ㅋ
+파퍼스,PAPERS,ㅍㅍㅅ,ㅍ
+파하 크리스탈,OB,ㅍㅎ ㅋㄹㅅㅌ,ㅇ
+팬에쉬,FAN ASH,ㅍㅇㅅ,ㅍ ㅇ
+퀴델,QUIDEL,ㅋㄷ,ㅋ
+하마표,HIPPO,ㅎㅁㅍ,ㅎ
+하우웰,HOWELL,ㅎㅇㅇ,ㅎ
+하이헬스,HI HEALTH,ㅎㅇㅎㅅ,ㅎ ㅎ
+한국인의 통신채널,SPEED 011,ㅎㄱㅇㅇ ㅌㅅㅊㄴ,ㅅ
+한지야?놀자!,HANJI YA? NOLZA!,ㅎㅈㅇㄴㅈ,ㅎ ㅇ ㄴ
+해양왕장보고,MARINE KING JANG BOGO,ㅎㅇㅇㅈㅂㄱ,ㅁ ㅋ ㅈ ㅂ
+핼래,HELLA,ㅎㄹ,ㅎ
+홍시왕,PERSIMMON KING,ㅎㅅㅇ,ㅍ ㅋ
+화승 화승,DONG AH,ㅎㅅ ㅎㅅ,ㄷ ㅇ
+히포,HIPPO,ㅎㅍ,ㅎ
+힐데,HILDE,ㅎㄷ,ㅎ
+대한무술경호단,KOREA Martial Art Bodyguard,ㄷㅎㅁㅅㄱㅎㄷ,ㅋ ㅁ ㅇ ㅂ
+대력왕,DAELYEOK KING,ㄷㄹㅇ,ㄷ ㅋ
+대신,DAESHIN,ㄷㅅ,ㄷ
+대형,DAEHYEONG,ㄷㅎ,ㄷ
+두에,DUEEF,ㄷㅇ,ㄷ
+도시바,TOSHIBA,ㄷㅅㅂ,ㅌ
+동아 동아,DONG AH,ㄷㅇ ㄷㅇ,ㄷ ㅇ
+제일 슈가 컴퍼니 리미티드,CHEIL SUGAR COMPANY LIMITED.,ㅈㅇ ㅅㄱ ㅋㅍㄴ ㄹㅁㅌㄷ,ㅊ ㅅ ㅋ ㄹ
+뉴-텍,NEWTEK,ㄴㅌ,ㄴ
+새.샘.하.우.스.,NEW SAMPLE HOUSE,ㅅㅅㅎㅇㅅ,ㄴ ㅅ ㅎ
+무늬졸,MUNIJJOL,ㅁㄴㅈ,ㅁ
+뉴참,NEW,ㄴㅊ,ㄴ
+맛드래,MATDRAE,ㅁㄷㄹ,ㅁ
+린메가3,RIN MEGA 3,ㄹㅁㄱ,ㄹ ㅁ
+추자도 멸치액젓,CHUJA ISLAND ANCHOVY SAUCE,ㅊㅈㄷ ㅁㅊㅇㅈ,ㅊ ㅇ ㅇ ㅅ
+아펙스,APEX,ㅇㅍㅅ,ㅇ
+자연주의,NATURALISM,ㅈㅇㅈㅇ,ㄴ
+의문,QUESTION,ㅇㅁ,ㅋ
+헌금거,HECOMGEO,ㅎㄱㄱ,ㅎ
+월매,WOLMAE,ㅇㅁ,ㅇ
+역할,ROLE,ㅇㅎ,ㄹ
+성현,SEONG-HYEON,ㅅㅎ,ㅅ
+스마트스캔,SMARTSCAN,ㅅㅁㅌㅅㅋ,ㅅ
+스낵스,SNAX,ㅅㄴㅅ,ㅅ
+스파인,SPINE,ㅅㅍㅇ,ㅅ
+아침,MORNING,ㅇㅊ,ㅁ
+아르테,ARTE,ㅇㄹㅌ,ㅇ
+아쿠아,AQUA,ㅇㅋㅇ,ㅇ
+아프리카,AFRICA,ㅇㅍㄹㅋ,ㅇ
+안창마을,ANCHANG VILLAGE,ㅇㅊㅁㅇ,ㅇ ㅂ
+알부자 베스트,ALBUJA BEST,ㅇㅂㅈ ㅂㅅㅌ,ㅇ ㅂ
+알알이 만두,AL AL MANDU,ㅇㅇㅇ ㅁㄷ,ㅇ ㅇ ㅁ
+에머랄드,EMERALD,ㅇㅁㄹㄷ,ㅇ
+엘리건스,ELEGANCE,ㅇㄹㄱㅅ,ㅇ
+오모모,OMOMO,ㅇㅁㅁ,ㅇ
+우리동네 청기와 감자탕,OUR NEIGHBORHOOD BLUE TILE POTATO SOUP,ㅇㄹㄷㄴ ㅊㄱㅇ ㄱㅈㅌ,ㅇ ㄴ ㅂ ㅌ ㅍ ㅅ
+우선제 헤어루시,Woosunje HairLucy,ㅇㅅㅈ ㅎㅇㄹㅅ,ㅇ ㅎ
+울산대학교,UOU UNIVERSITY OF ULSAN,ㅇㅅㄷㅎㄱ,ㅇ ㅇ ㅇ ㅇ
+웰컴,WELCOME,ㅇㅋ,ㅇ
+위코프,eCof We cof,ㅇㅋㅍ,ㅇ ㅇ ㅋ
+이가촌,LEE GA CHON,ㅇㄱㅊ,ㄹ ㄱ ㅊ
+잡보,JAPBO,ㅈㅂ,ㅈ
+잠자리표,DRAGONFLY MARK,ㅈㅈㄹㅍ,ㄷ ㅁ
+장모님,MOTHER-IN-LAW,ㅈㅁㄴ,ㅁ
+정글,JUNGLE,ㅈㄱ,ㅈ
+직지,JIKJI,ㅈㅈ,ㅈ
+차무로,CHAMURO,ㅊㅁㄹ,ㅊ
+창조,CREATION,ㅊㅈ,ㅋ
+청룡,BLUE DRAGON,ㅊㄹ,ㅂ ㄷ
+초크토,CHOKTO,ㅊㅋㅌ,ㅊ
+초로,CHORO,ㅊㄹ,ㅊ
+캐스퍼,CASPER,ㅋㅅㅍ,ㅋ
+코리아나,COREANA,ㅋㄹㅇㄴ,ㅋ
+평화,PEACE,ㅍㅎ,ㅍ
+프레스카,FRESCA,ㅍㄹㅅㅋ,ㅍ
+하네스,HARNESS,ㅎㄴㅅ,ㅎ
+한국콜마주식회사,KOREA KOLMAR CORP,ㅎㄱㅋㅁㅈㅅㅎㅅ,ㅋ ㅋ ㅋ
+한진중공업,HANJIN HEAVY INDUSTRIES & CONSTRUCTION,ㅎㅈㅈㄱㅇ,ㅎ ㅎ ㅇ
+쥬스트 오 꾀르,JUST OH COEUR,ㅈㅅㅌ ㅇ ㄲㄹ,ㅈ ㅇ ㅋ
+행복수학,HAPPY MATH,ㅎㅂㅅㅎ,ㅎ ㅁ
+헤로즈,HEROES,ㅎㄹㅈ,ㅎ
+향미촌,HYANGMI VILLAGE,ㅎㅁㅊ,ㅎ ㅂ
+화신종합건설,HWASIN GENERAL CONSTRUCTION,ㅎㅅㅈㅎㄱㅅ,ㅎ ㅈ ㅋ
+호텔,HOTEL,ㅎㅌ,ㅎ
+활활 불 닭발,BURNING CHICKEN FEET,ㅎㅎ ㅂ ㄷㅂ,ㅂ ㅊ ㅍ
+희망구름,HOPE CLOUD,ㅎㅁㄱㄹ,ㅎ ㅋ
+놀부집옹기참갈비,NOLBU HOUSE ONGGI CHARCOAL RIBS,ㄴㅂㅈㅇㄱㅊㄱㅂ,ㄴ ㅎ ㅇ ㅊ ㄹ
+홍삼철인,RED GINSENG IRON MAN,ㅎㅅㅊㅇ,ㄹ ㄱ ㅇ ㅁ
+놀부,NOLBU,ㄴㅂ,ㄴ
+공주,PRINCESS,ㄱㅈ,ㅍ
+고성,GOSEONG,ㄱㅅ,ㄱ
+고향,HOMETOWN,ㄱㅎ,ㅎ
+글로리아,GLORIA,ㄱㄹㄹㅇ,ㄱ
+금,GOLD,ㄱ,ㄱ
+나라,COUNTRY,ㄴㄹ,ㅋ
+나폴리,NAPOLI,ㄴㅍㄹ,ㄴ
+넥소니아,NEXONIA,ㄴㅅㄴㅇ,ㄴ
+넥스터,NEXSTER,ㄴㅅㅌ,ㄴ
+네모,SQUARE,ㄴㅁ,ㅅ
+노선,ROUTE,ㄴㅅ,ㄹ
+녹차,GREEN TEA,ㄴㅊ,ㄱ ㅌ
+높은,HIGH,ㄴㅍㅇ,ㅎ
+눈,SNOW,ㄴ,ㅅ
+뉴엘리트,NEW ELITE,ㄴㅇㄹㄹㅌ,ㄴ ㅇ
+니코니코,NICO NICO,ㄴㅋㄴㅋ,ㄴ ㄴ
+다윗,DAVID,ㄷㅇ,ㄷ
+다크,DARK,ㄷㅋ,ㄷ
+다크호스,DARK HORSE,ㄷㅋㅎㅅ,ㄷ ㅎ
+다하네,DAHANE,ㄷㅎㄴ,ㄷ
+당구,BILLIARDS,ㄷㄱ,ㅂ
+대웅,DAEWOONG,ㄷㅇ,ㄷ
+덕천,DUKCHEON,ㄷㅊ,ㄷ
+덴탈,DENTAL,ㄷㅌ,ㄷ
+도레미,DOREMI,ㄷㄹㅁ,ㄷ
+도시,CITY,ㄷㅅ,ㅋ
+동국,DONGGUK,ㄷㄱ,ㄷ
+동방,DONGBANG,ㄷㅂ,ㄷ
+동부,DONGBU,ㄷㅂ,ㄷ
+동아,DONGA,ㄷㅇ,ㄷ
+두루미,CRANE,ㄷㄹㅁ,ㅋ
+뒤숑,DUCHON,ㄷㅅ,ㄷ
+드림,DREAM,ㄷㄹㅁ,ㄷ
+디아,DIA,ㄷㅇ,ㄷ
+따뜻한,WARM,ㄸㅇㅎ,ㅇ
+땅콩,PEANUT,ㄸㅋ,ㅍ
+떡볶이,TTEOKBOKKI,ㄸㅂㅇ,ㅌ
+떡집,RICE CAKE HOUSE,ㄸㅈ,ㄹ ㅋ ㅎ
+또또,TOTO,ㄸㄸ,ㅌ
+뚝딱이,TUKTAKI,ㄸㄸㅇ,ㅌ
+라라랜드,LALALAND,ㄹㄹㄹㄷ,ㄹ
+라보,LABO,ㄹㅂ,ㄹ
+라이프,LIFE,ㄹㅇㅍ,ㄹ
+라임,LIME,ㄹㅇ,ㄹ
+랜덤,RANDOM,ㄹㄷ,ㄹ
+랩퍼,RAPPER,ㄹㅍ,ㄹ
+러키,LUCKY,ㄹㅋ,ㄹ
+레몬,LEMON,ㄹㅁ,ㄹ
+레인북,RAINBOW,ㄹㅇㅂ,ㄹ
+로보,ROBOT,ㄹㅂ,ㄹ
+로봇,ROBOT,ㄹㅂ,ㄹ
+로또,LOTTO,ㄹㅌ,ㄹ
+롯데,LOTTE,ㄹㄷ,ㄹ
+루럭스,RURUX,ㄹㄹㅅ,ㄹ
+루트,ROOT,ㄹㅌ,ㄹ
+리버,RIVER,ㄹㅂ,ㄹ
+리자드,LIZARD,ㄹㅈㄷ,ㄹ
+리코더,RECORDER,ㄹㅋㄷ,ㄹ
+리플,RIPPLE,ㄹㅍ,ㄹ
+리힌,REHIN,ㄹㅎ,ㄹ
+마루,MARU,ㅁㄹ,ㅁ
+마리아,MARIA,ㅁㄹㅇ,ㅁ
+마스터,MASTER,ㅁㅅㅌ,ㅁ
+마음,MIND,ㅁㅇ,ㅁ
+마이,MY,ㅁㅇ,ㅁ
+마이크로,MICRO,ㅁㅇㅋㄹ,ㅁ
+마이텍,MITECH,ㅁㅇㅌ,ㅁ
+마제스티,MAJESTY,ㅁㅈㅅㅌ,ㅁ
+만두,MANDU,ㅁㄷ,ㅁ
+만려별 진동횟집,MANRYEOBYEOL JINDONG RAW FISH,ㅁㄹㅂ ㅈㄷㅎㅈ,ㅁ ㅈ ㄹ ㅍ
+만화,COMIC,ㅁㅎ,ㅋ
+맘맘,MOMMOM,ㅁㅁ,ㅁ
+매난국죽 사군자,PLUM ORCHID CHRYSANTHEMUM BAMBOO,ㅁㄴㄱㅈ ㅅㄱㅈ,ㅍ ㅇ ㅊ ㅂ
+맹호,FIERCE TIGER,ㅁㅎ,ㅍ ㅌ
+멀티,MULTI,ㅁㅌ,ㅁ
+모닝,MORNING,ㅁㄴ,ㅁ
+모두,ALL,ㅁㄷ,ㅇ
+모란,PEONY,ㅁㄹ,ㅍ
+모자,HAT,ㅁㅈ,ㅎ
+모직,WOOL,ㅁㅈ,ㅇ
+무궁화,NATIONAL FLOWER,ㅁㄱㅎ,ㅁ
+무소,BUFFALO,ㅁㅅ,ㅂ
+무지개,RAINBOW,ㅁㅈㄱ,ㄹ
+문,MOON,ㅁ,ㅁ
+문화,CULTURE,ㅁㅎ,ㅋ
+물,WATER,ㅁ,ㅇ
+밀리즈,MILLIES,ㅁㄹㅈ,ㅁ
+바다,SEA,ㅂㄷ,ㅅ
+바람,WIND,ㅂㄹ,ㅇ
+바우크,BOWK,ㅂㅇㅋ,ㅂ
+박사,DOCTOR,ㅂㅅ,ㄷ
+별,STAR,ㅂ,ㅅ
+벤토,BENTO,ㅂㅌ,ㅂ
+벤투,BENT,ㅂㅌ,ㅂ
+보르노,BORNO,ㅂㄹㄴ,ㅂ
+보석,GEMSTONE,ㅂㅅ,ㄱ
+보쌈,BOSSAM,ㅂㅆ,ㅂ
+보이스,VOICE,ㅂㅇㅅ,ㅂ
+부부,COUPLE,ㅂㅂ,ㅋ
+북극곰,POLAR BEAR,ㅂㄱㄱ,ㅍ ㅂ
+분홍색,PINK,ㅂㅎㅅ,ㅍ
+붕어빵,FISH-SHAPED PASTRY,ㅂㅇㅂ,ㅍ ㅍ
+비바,VIVA,ㅂㅂ,ㅂ
+비빔밥,BIBIMBAP,ㅂㅂㅂ,ㅂ
+비숑,BICHON,ㅂㅅ,ㅂ
+비스킷,BISCUIT,ㅂㅅㅋ,ㅂ
+비전,VISION,ㅂㅈ,ㅂ
+빌라,VILLA,ㅂㄹ,ㅂ
+빛,LIGHT,ㅂ,ㄹ
+빨강,RED,ㅃㄱ,ㄹ
+사과,APPLE,ㅅㄱ,ㅇ
+사랑,LOVE,ㅅㄹ,ㄹ
+사막,DESERT,ㅅㅁ,ㄷ
+사자,LION,ㅅㅈ,ㄹ
+사찰,TEMPLE,ㅅㅊ,ㅌ
+삼성,SAMSUNG,ㅅㅅ,ㅅ
+삼일절,MARCH FIRST MOVEMENT,ㅅㅇㅈ,ㅁ ㅍ ㅁ
+상록수,EVERGREEN,ㅅㄹㅅ,ㅇ
+새,BIRD,ㅅ,ㅂ
+새해,NEW YEAR,ㅅㅎ,ㄴ ㅇ
+산타,SANTA,ㅅㅌ,ㅅ
+생선,FISH,ㅅㅅ,ㅍ
+서울,SEOUL,ㅅㅇ,ㅅ
+선박,SHIP,ㅅㅂ,ㅅ
+선생님,TEACHER,ㅅㅅㄴ,ㅌ
+설날,LUNAR NEW YEAR,ㅅㄴ,ㄹ ㄴ ㅇ
+성공,SUCCESS,ㅅㄱ,ㅅ
+세계,WORLD,ㅅㄱ,ㅇ
+세종대왕,KING SEJONG,ㅅㅈㄷㅇ,ㅋ ㅅ
+소,COW,ㅅ,ㅋ
+소금,SALT,ㅅㄱ,ㅅ
+소나무,PINE TREE,ㅅㄴㅁ,ㅍ ㅌ
+소주,SOJU,ㅅㅈ,ㅅ
+속초,SOKCHO,ㅅㅊ,ㅅ
+손,HAND,ㅅ,ㅎ
+송이버섯,MATSUTAKE MUSHROOM,ㅅㅇㅂㅅ,ㅁ ㅁ
+수박,WATERMELON,ㅅㅂ,ㅇ
+수업,CLASS,ㅅㅇ,ㅋ
+수영,SWIMMING,ㅅㅇ,ㅅ
+순두부,SOFT TOFU,ㅅㄷㅂ,ㅅ ㅌ
+슈퍼,SUPER,ㅅㅍ,ㅅ
+스마트,SMART,ㅅㅁㅌ,ㅅ
+스포츠,SPORTS,ㅅㅍㅊ,ㅅ
+스타,STAR,ㅅㅌ,ㅅ
+스튜디오,STUDIO,ㅅㅌㄷㅇ,ㅅ
+스페이스,SPACE,ㅅㅍㅇㅅ,ㅅ
+시골,COUNTRYSIDE,ㅅㄱ,ㅋ
+신,NEW,ㅅ,ㄴ
+심바,SIMBA,ㅅㅂ,ㅅ
+싱싱치킨,SING SING CHICKEN,ㅅㅅㅊㅋ,ㅅ ㅅ ㅊ
+씨앗,SEED,ㅆㅇ,ㅅ
+아가페,AGAPE,ㅇㄱㅍ,ㅇ
+아데,ADE,ㅇㄷ,ㅇ
+아람,ARAM,ㅇㄹ,ㅇ
+아메리칸,AMERICAN,ㅇㅁㄹㅋ,ㅇ
+아리비,ALIBI,ㅇㄹㅂ,ㅇ
+아이돌,IDOL,ㅇㅇㄷ,ㅇ
+아이샨,Aisyan,ㅇㅇㅅ,ㅇ
+아이큐,IQ,ㅇㅇㅋ,ㅇ
+아카데미,ACADEMY,ㅇㅋㄷㅁ,ㅇ
+아쿠아틱,AQUATIC,ㅇㅋㅇㅌ,ㅇ
+아트,ART,ㅇㅌ,ㅇ
+아프로,AFRO,ㅇㅍㄹ,ㅇ
+아프리카,AFRICA,ㅇㅍㄹㅋ,ㅇ
+악어,ALLIGATOR,ㅇㅇ,ㅇ
+안녕,HELLO,ㅇㄴ,ㅎ
+알피,RP,ㅇㅍ,ㄹ
+압구정,APGUJEONG,ㅇㄱㅈ,ㅇ
+앙리,HENRI,ㅇㄹ,ㅎ
+애니,ANNIE,ㅇㄴ,ㅇ
+야구,BASEBALL,ㅇㄱ,ㅂ
+약,MEDICINE,ㅇ,ㅁ
+양명주,YOMEISHU,ㅇㅁㅈ,ㅇ
+양파,ONION,ㅇㅍ,ㅇ
+어부,FISHERMAN,ㅇㅂ,ㅍ
+어린왕자,LITTLE PRINCE,ㅇㄹㅇㅈ,ㄹ ㅍ
+어유와 리미의 방울토마토,FISH OIL AND REMI CHERRY TOMATO,ㅇㅇㅇ ㄹㅁㅇ ㅂㅇㅌㅁㅌ,ㅍ ㅇ ㅇ ㄹ ㅊ ㅌ
+여름,SUMMER,ㅇㄹ,ㅅ
+여의도,YEOUIDO,ㅇㅇㄷ,ㅇ
+연강 연강,YON KANG,ㅇㄱ ㅇㄱ,ㅇ ㅋ
+연대,YONSEI,ㅇㄷ,ㅇ
+연필,PENCIL,ㅇㅍ,ㅍ
+영웅,HERO,ㅇㅎ,ㅎ
+영화,MOVIE,ㅇㅎ,ㅁ
+염소,GOAT,ㅇㅅ,ㄱ
+예술,ART,ㅇㅅ,ㅇ
+오토,AUTO,ㅇㅌ,ㅇ
+옥수수,CORN,ㅇㅅㅅ,ㅋ
+온,ON,ㅇ,ㅇ
+완벽,PERFECT,ㅇㅂ,ㅍ
+왕,KING,ㅇ,ㅋ
+왕관,CROWN,ㅇㄱ,ㅋ
+외.몸제,EXTERNAL MEDICINE,ㅇㅁㅈ,ㅇ ㅁ
+우유,MILK,ㅇㅇ,ㅁ
+욕실,BATHROOM,ㅇㅅ,ㅂ
+원,CIRCLE,ㅇ,ㅊ
+유아,BABY,ㅇㅇ,ㅂ
+유머,HUMOR,ㅇㅁ,ㅎ
+유미,YOUME,ㅇㅁ,ㅇ
+은,SILVER,ㅇ,ㅅ
+음,NEGATIVE,ㅇ,ㄴ
+음식,FOOD,ㅇㅅ,ㅍ
+음악,MUSIC,ㅇㅇ,ㅁ
+의사,DOCTOR,ㅇㅅ,ㄷ
+이스트,EAST,ㅇㅅㅌ,ㅇ
+인삼,GINSENG,ㅇㅅ,ㄱ
+인형,DOLL,ㅇㅎ,ㄷ
+일류,FIRST CLASS,ㅇㄹ,ㅍ ㅋ
+잭슨,JACKSON,ㅈㅅ,ㅈ
+재래,TRADITIONAL,ㅈㄹ,ㅌ
+재미,FUN,ㅈㅁ,ㅍ
+저금통,PIGGY BANK,ㅈㄱㅌ,ㅍ ㅂ
+저항,RESISTANCE,ㅈㅎ,ㄹ
+전기,ELECTRICITY,ㅈㄱ,ㅇ
+전남,JEOLLANAMDO,ㅈㄴ,ㅈ
+전망,PROSPECT,ㅈㅁ,ㅍ
+전설,LEGEND,ㅈㅅ,ㄹ
+전쟁,WAR,ㅈㅈ,ㅇ
+전자,ELECTRONICS,ㅈㅈ,ㅇ
+젖소,DAIRY COW,ㅈㅅ,ㄷ ㅋ
+제국,EMPIRE,ㅈㄱ,ㅇ
+제주,JEJU,ㅈㅈ,ㅈ
+조선,JOSEON,ㅈㅅ,ㅈ
+조아,JOA,ㅈㅇ,ㅈ
+좋은,GOOD,ㅈㅇ,ㄱ
+죽순,BAMBOO SHOOT,ㅈㅅ,ㅂ ㅅ
+준비,PREPARATION,ㅈㅂ,ㅍ
+중국,CHINA,ㅈㄱ,ㅊ
+중력,GRAVITY,ㅈㄹ,ㄱ
+즐거운,PLEASANT,ㅈㄱㅇ,ㅍ
+직접,DIRECT,ㅈㅈ,ㄷ
+진이제,JIN IJE,ㅈㅇㅈ,ㅈ ㅇ
+진짜,REAL,ㅈㅉ,ㄹ
+진주,PEARL,ㅈㅈ,ㅍ
+진지,SERIOUS,ㅈㅈ,ㅅ
+진품,GENUINE,ㅈㅍ,ㄱ
+짜장면,JJAJANGMYEON,ㅉㅈㅁ,ㅈ
+쪽,SIDE,ㅉ,ㅅ
+참,TRUE,ㅊ,ㅌ
+참외,ORIENTAL MELON,ㅊㅇ,ㅇ ㅁ
+천국,HEAVEN,ㅊㄱ,ㅎ
+천사,ANGEL,ㅊㅅ,ㅇ
+철기시대,IRON AGE,ㅊㄱㅅㄷ,ㅇ ㅇ
+청소년,TEENAGER,ㅊㅅㄴ,ㅌ
+체육,PHYSICAL EDUCATION,ㅊㅇ,ㅍ ㅇ
+초록,GREEN,ㅊㄹ,ㄱ
+촛불,CANDLE,ㅊㅂ,ㅋ
+총,GUN,ㅊ,ㄱ
+치즈,CHEESE,ㅊㅈ,ㅊ
+친구,FRIEND,ㅊㄱ,ㅍ
+칠판,BLACKBOARD,ㅊㅂ,ㅂ
+카드,CARD,ㅋㄷ,ㅋ
+카메라,CAMERA,ㅋㅁㄹ,ㅋ
+카우맨,COWMAN,ㅋㅇㅁ,ㅋ
+칼,KNIFE,ㅋ,ㅋ
+캔디,CANDY,ㅋㄷ,ㅋ
+캠페인,CAMPAIGN,ㅋㅍㅇ,ㅋ
+커피,COFFEE,ㅋㅍ,ㅋ
+컬러,COLOR,ㅋㄹ,ㅋ
+컬러풀,COLORFUL,ㅋㄹㅍ,ㅋ
+컴퓨터,COMPUTER,ㅋㅍㅌ,ㅋ
+컴퓨터오르간,COMPUTER ORGAN,ㅋㅍㅌㅇㄹㄱ,ㅋ ㅇ
+코끼리,ELEPHANT,ㅋㄲㄹ,ㅇ
+콩,BEAN,ㅋ,ㅂ
+콩 냉면,BEAN COLD NOODLES,ㅋ ㄴㅁ,ㅂ ㅋ ㄴ
+콩나물,BEAN SPROUTS,ㅋㄴㅁ,ㅂ ㅅ
+크리스마스,CHRISTMAS,ㅋㄹㅅㅁㅅ,ㅊ
+클래식,CLASSIC,ㅋㄹㅅ,ㅋ
+킹,KING,ㅋ,ㅋ
+타이어,TIRE,ㅌㅇㅇ,ㅌ
+태권도,TAEKWONDO,ㅌㄱㄷ,ㅌ
+태극기,TAEGEUKKI,ㅌㄱㄱ,ㅌ
+태양,SUN,ㅌㅇ,ㅅ
+택시,TAXI,ㅌㅅ,ㅌ
+테마,THEME,ㅌㅁ,ㅌ
+테이블,TABLE,ㅌㅇㅂ,ㅌ
+털,FUR,ㅌ,ㅍ
+토스트,TOAST,ㅌㅅㅌ,ㅌ
+토크,TALK,ㅌㅋ,ㅌ
+튤립,TULIP,ㅌㄹ,ㅌ
+팀,TEAM,ㅍ,ㅌ
+팝콘,POPCORN,ㅍㅋ,ㅍ
+퍼플,PURPLE,ㅍㅍ,ㅍ
+페스티벌,FESTIVAL,ㅍㅅㅌㅂ,ㅍ
+펜,PEN,ㅍ,ㅍ
+편의점,CONVENIENCE STORE,ㅍㅇㅈ,ㅋ ㅅ
+평탄한,FLAT,ㅍㅌㅎ,ㅍ
+포도,GRAPE,ㅍㄷ,ㄱ
+포도주,WINE,ㅍㄷㅈ,ㅇ
+포뮬러,FORMULA,ㅍㅁㄹ,ㅍ
+포스터,POSTER,ㅍㅅㅌ,ㅍ
+폴라,POLAR,ㅍㄹ,ㅍ
+풍선,BALLOON,ㅍㅅ,ㅂ
+픽,PICK,ㅍ,ㅍ
+핀란드,FINLAND,ㅍㄹㄷ,ㅍ
+필기,WRITING,ㅍㄱ,ㅇ
+필터,FILTER,ㅍㅌ,ㅍ
+하나,ONE,ㅎㄴ,ㅇ
+하늘,SKY,ㅎㄴ,ㅅ
+하모니,HARMONY,ㅎㅁㄴ,ㅎ
+하이킹,HIKING,ㅎㅇㅋ,ㅎ
+하트,HEART,ㅎㅌ,ㅎ
+학교,SCHOOL,ㅎㄱ,ㅅ
+한글,HANGUL,ㅎㄱ,ㅎ
+한강,HAN RIVER,ㅎㄱ,ㅎ ㄹ
+한국,KOREA,ㅎㄱ,ㅋ
+한국어,KOREAN,ㅎㄱㅇ,ㅋ
+한우리,HANWOORI,ㅎㅇㄹ,ㅎ
+핵심,CORE,ㅎㅅ,ㅋ
+햄,HAM,ㅎ,ㅎ
+햇빛,SUNLIGHT,ㅎㅂ,ㅅ
+해변,BEACH,ㅎㅂ,ㅂ
+해파리,JELLYFISH,ㅎㅍㄹ,ㅈ
+행복,HAPPINESS,ㅎㅂ,ㅎ
+허니,HONEY,ㅎㄴ,ㅎ
+현대,MODERN,ㅎㄷ,ㅁ
+협력,COOPERATION,ㅎㄹ,ㅋ
+호랑이,TIGER,ㅎㄹㅇ,ㅌ
+혼돈,CHAOS,ㅎㄷ,ㅊ
+홀로그램,HOLOGRAM,ㅎㄹㄱㄹ,ㅎ
+화려한,SPLENDID,ㅎㄹㅎ,ㅅ
+화산,VOLCANO,ㅎㅅ,ㅂ
+화학,CHEMISTRY,ㅎㅎ,ㅊ
+환경,ENVIRONMENT,ㅎㄱ,ㅇ
+환상,FANTASY,ㅎㅅ,ㅍ
+황금,GOLDEN,ㅎㄱ,ㄱ
+회사,COMPANY,ㅎㅅ,ㅋ
+후레쉬맨치킨,FFC FRESH FRIED CHICKEN,ㅎㄹㅅㅁㅊㅋ,ㅍ ㅍ ㅊ
+힌트,HINT,ㅎㅌ,ㅎ
+새와 짐승,BIRDS AND BEASTS,ㅅㅇ ㅈㅅ,ㅂ ㅇ ㅂ
+세상과 하늘,WORLD AND SKY,ㅅㅅㄱ ㅎㄴ,ㅇ ㅇ ㅅ
+아이 디지털,i digital,ㅇㅇ ㄷㅈㅌ,ㅇ ㄷ
