@@ -58,7 +58,10 @@ async def load_trademark_data(file_path: str) -> Dict[str, int]:
         success, failed = bulk(es_client, actions, refresh=True)
         logger.info(f"색인 완료: {success}개 성공, {failed}개 실패")
         
-        return {"success": success, "failed": failed}
+        # failed가 리스트로 반환되면 그 길이를 반환
+        failed_count = len(failed) if isinstance(failed, list) else failed
+        
+        return {"success": success, "failed": failed_count}
     
     except Exception as e:
         logger.error(f"상표 데이터 로드 실패: {str(e)}")
