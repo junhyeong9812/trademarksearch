@@ -16,6 +16,7 @@ from app.domain.trademark.index.create_trademark_index import create_trademark_i
 from app.domain.trademark.services.load_trademark_data import load_trademark_data
 from app.domain.trademark.services.search_trademarks import search_trademarks
 from app.domain.trademark.services.process_trademark_data import process_trademark_data
+from app.domain.trademark.services.chosung_utils import extract_chosung, is_chosung_query, has_korean
 
 # 외부로 노출할 모듈 목록
 __all__ = [
@@ -26,5 +27,8 @@ __all__ = [
     'create_trademark_index', # 인덱스 생성 함수
     'load_trademark_data',  # 데이터 로드 함수
     'search_trademarks',    # 검색 함수
-    'process_trademark_data' # 데이터 처리 함수
+    'process_trademark_data', # 데이터 처리 함수
+    'extract_chosung',      # 초성 추출 함수
+    'is_chosung_query',     # 초성 쿼리 여부 확인 함수
+    'has_korean'            # 한글 포함 여부 확인 함수
 ]

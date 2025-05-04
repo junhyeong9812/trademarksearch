@@ -22,6 +22,7 @@ os.environ["ELASTICSEARCH_PORT"] = "9200"
 from app.main import app
 from app.core.config import settings
 from app.core.elasticsearch import es_client
+from app.domain.trademark.services.chosung_utils import extract_chosung
 
 @pytest.fixture(scope="session")
 def event_loop():
@@ -93,6 +94,10 @@ def create_test_index():
 def index_test_data():
     """테스트 데이터 인덱싱 헬퍼"""
     def _index_data(data, refresh=True):
+        # 초성 필드가 없고 productName이 있으면 추가
+        if "productName" in data and "productName_chosung" not in data:
+            data["productName_chosung"] = extract_chosung(data["productName"])
+            
         index_name = settings.ELASTICSEARCH_INDEX
         return es_client.index(
             index=index_name,
@@ -108,3 +113,41 @@ def mock_search_result():
         # 실제 환경에서는 이 함수는 사용되지 않고 실제 Elasticsearch 검색이 수행됩니다
         pass
     return _set_search_result
+
+@pytest.fixture
+def sample_chosung_data():
+    """초성 검색 테스트를 위한 샘플 데이터"""
+    return [
+        {
+            "productName": "삼성전자",
+            "productNameEng": "Samsung Electronics",
+            "applicationNumber": "40-2023-0001001",
+            "applicationDate": "20230101",
+            "registerStatus": "등록",
+            "productName_chosung": "ㅅㅅㅈㅈ"
+        },
+        {
+            "productName": "엘지전자",
+            "productNameEng": "LG Electronics",
+            "applicationNumber": "40-2023-0001002",
+            "applicationDate": "20230102",
+            "registerStatus": "등록",
+            "productName_chosung": "ㅇㅈㅈㅈ"
+        },
+        {
+            "productName": "애플",
+            "productNameEng": "Apple",
+            "applicationNumber": "40-2023-0001003",
+            "applicationDate": "20230103",
+            "registerStatus": "등록",
+            "productName_chosung": "ㅇㅍ"
+        },
+        {
+            "productName": "구글",
+            "productNameEng": "Google",
+            "applicationNumber": "40-2023-0001004",
+            "applicationDate": "20230104",
+            "registerStatus": "등록",
+            "productName_chosung": "ㄱㄱ"
+        }
+    ]

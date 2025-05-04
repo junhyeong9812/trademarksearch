@@ -2,15 +2,24 @@
 상표 데이터 전처리 함수
 
 이 모듈은 상표 데이터를 Elasticsearch에 색인하기 전에 전처리하는 함수를 제공합니다.
+초성 추출 기능이 포함되어 있습니다.
 """
-import logging
-from typing import Dict, Any
-from app.domain.trademark.services.helpers import format_date, process_list_field
+from loguru import logger
+from typing import Dict, Any, Optional
 
-logger = logging.getLogger(__name__)
+from app.domain.trademark.services.helpers import format_date, process_list_field
+from app.domain.trademark.services.chosung_utils import extract_chosung
 
 def process_trademark_data(data: Dict[str, Any]) -> Dict[str, Any]:
-    """상표 데이터 전처리 (날짜 형식 변환, 리스트 필드 처리 등)"""
+    """
+    상표 데이터 전처리 (날짜 형식 변환, 리스트 필드 처리, 초성 추출 등)
+    
+    Args:
+        data (Dict[str, Any]): 원본 상표 데이터
+        
+    Returns:
+        Dict[str, Any]: 전처리된 상표 데이터
+    """
     processed_data = {}
     
     # 기본 필드 복사
@@ -40,5 +49,15 @@ def process_trademark_data(data: Dict[str, Any]) -> Dict[str, Any]:
     for field in list_fields:
         if field in data:
             processed_data[field] = process_list_field(data[field])
+    
+    # 초성 추출 처리
+    if 'productName' in data and data['productName']:
+        try:
+            chosung = extract_chosung(data['productName'])
+            if chosung:
+                processed_data['productName_chosung'] = chosung
+                logger.debug(f"상표명 '{data['productName']}'의 초성: {chosung}")
+        except Exception as e:
+            logger.error(f"초성 추출 중 오류 발생 - 상표명: {data['productName']}, 오류: {str(e)}", exc_info=True)
     
     return processed_data

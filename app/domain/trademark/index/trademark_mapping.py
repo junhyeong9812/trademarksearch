@@ -1,7 +1,7 @@
 """
 상표 검색에 최적화된 완전한 인덱스 매핑
 
-복잡하지만 강력한 오타 교정과 검색 기능을 제공하는 매핑 전략
+동의어 사전 기능 및 초성 검색 기능이 포함된 매핑 전략
 """
 import logging
 
@@ -31,16 +31,17 @@ trademark_mapping = {
                         "analyzer": "nori_edge_ngram",
                         "search_analyzer": "korean_standard"
                     },
-                    "synonym": {
-                        "type": "text",
-                        "analyzer": "nori_synonym",
-                        "search_analyzer": "nori_synonym_search"
-                    },
                     "no_decompound": {
                         "type": "text",
                         "analyzer": "nori_no_decompound"
                     }
                 }
+            },
+            # 상표명 초성 필드 (초성 검색용)
+            "productName_chosung": {
+                "type": "text",
+                "analyzer": "keyword",
+                "search_analyzer": "keyword"
             },
             "productNameEng": {
                 "type": "text",
@@ -55,11 +56,6 @@ trademark_mapping = {
                         "type": "text",
                         "analyzer": "english_ngram", 
                         "search_analyzer": "english_search_ngram"
-                    },
-                    "synonym": {
-                        "type": "text",
-                        "analyzer": "english_synonym",
-                        "search_analyzer": "english_synonym_search"
                     }
                 }
             },
@@ -210,26 +206,6 @@ trademark_mapping = {
                         "edge_ngram_filter"
                     ]
                 },
-                # 한국어 동의어 분석기
-                "nori_synonym": {
-                    "type": "custom",
-                    "tokenizer": "nori_tokenizer_standard",
-                    "filter": [
-                        "lowercase",
-                        "nori_readingform",
-                        "trademark_synonym"
-                    ]
-                },
-                # 한국어 동의어 검색용 분석기
-                "nori_synonym_search": {
-                    "type": "custom",
-                    "tokenizer": "nori_tokenizer_standard",
-                    "filter": [
-                        "lowercase",
-                        "nori_readingform",
-                        "trademark_synonym"
-                    ]
-                },
                 # 복합어 미분리 분석기
                 "nori_no_decompound": {
                     "type": "custom",
@@ -274,24 +250,6 @@ trademark_mapping = {
                     "tokenizer": "standard",
                     "filter": [
                         "lowercase"
-                    ]
-                },
-                # 영문 동의어 분석기
-                "english_synonym": {
-                    "type": "custom",
-                    "tokenizer": "standard",
-                    "filter": [
-                        "lowercase",
-                        "trademark_synonym"
-                    ]
-                },
-                # 영문 동의어 검색용 분석기
-                "english_synonym_search": {
-                    "type": "custom",
-                    "tokenizer": "standard",
-                    "filter": [
-                        "lowercase",
-                        "trademark_synonym"
                     ]
                 },
                 # 번호/코드용 분석기
@@ -345,12 +303,6 @@ trademark_mapping = {
                         "E", "IC", "J", "MAG", "MAJ", "MM", "SP", 
                         "SSC", "SSO", "SC", "SE", "XPN", "XSA", "XSN", "XSV"
                     ]
-                },
-                # 동의어 필터
-                "trademark_synonym": {
-                    "type": "synonym",
-                    "synonyms_path": "analysis/synonym.txt",
-                    "updateable": True
                 }
             }
         }

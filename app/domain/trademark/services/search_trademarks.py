@@ -2,6 +2,7 @@
 상표 검색 함수
 
 이 모듈은 검색 매개변수에 따라 상표 데이터를 검색하는 함수를 제공합니다.
+초성 검색 기능이 포함되어 있습니다.
 """
 from typing import Dict, Any
 from elasticsearch import NotFoundError
@@ -11,9 +12,23 @@ from app.core.elasticsearch import es_client
 from app.core.config import settings
 from app.domain.trademark.schemas.trademark_search_params import TrademarkSearchParams
 from app.core.exceptions import SearchQueryError, IndexNotFoundError, ElasticsearchConnectionError
+from app.domain.trademark.services.chosung_utils import is_chosung_query, has_korean
 
 async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, Any]:
-    """검색 매개변수에 따라 상표 데이터 검색"""
+    """
+    검색 매개변수에 따라 상표 데이터 검색
+    
+    Args:
+        search_params (TrademarkSearchParams): 검색 매개변수
+        
+    Returns:
+        Dict[str, Any]: 검색 결과
+        
+    Raises:
+        IndexNotFoundError: 인덱스를 찾을 수 없는 경우
+        ElasticsearchConnectionError: Elasticsearch 연결 오류
+        SearchQueryError: 검색 쿼리 오류
+    """
     index_name = settings.ELASTICSEARCH_INDEX
     
     logger.debug(f"검색 시작 - 인덱스: {index_name}, 검색어: {search_params.query}")
@@ -28,14 +43,48 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
     
     # 검색어 처리
     if search_params.query:
-        query["bool"]["must"].append({
-            "multi_match": {
-                "query": search_params.query,
-                "fields": ["productName^3", "productName.ngram^2", "productNameEng^2", "productNameEng.ngram"],
-                "type": "best_fields"
-            }
-        })
-        logger.debug(f"검색어 적용: {search_params.query}")
+        query_text = search_params.query.strip()
+        
+        # 초성 검색 여부 확인
+        chosung_only = is_chosung_query(query_text)
+        has_korean_chars = has_korean(query_text)
+        
+        logger.debug(f"쿼리 분석 - 초성 전용: {chosung_only}, 한글 포함: {has_korean_chars}")
+        
+        if chosung_only:
+            # 초성 검색인 경우
+            logger.debug(f"초성 검색 모드 적용: {query_text}")
+            query["bool"]["must"].append({
+                "match_phrase_prefix": {
+                    "productName_chosung": {
+                        "query": query_text,
+                        "boost": 5.0
+                    }
+                }
+            })
+        else:
+            # 일반 검색인 경우
+            query["bool"]["must"].append({
+                "multi_match": {
+                    "query": query_text,
+                    "fields": ["productName^3", "productName.ngram^2", "productNameEng^2", "productNameEng.ngram"],
+                    "type": "best_fields"
+                }
+            })
+            
+            # 한글이 포함된 경우 초성 필드도 부분적으로 검색
+            if has_korean_chars:
+                logger.debug(f"한글 포함 - 초성 부분 검색도 활성화")
+                query["bool"]["should"] = [{
+                    "match": {
+                        "productName_chosung": {
+                            "query": query_text,
+                            "boost": 1.0
+                        }
+                    }
+                }]
+        
+        logger.debug(f"검색어 적용: {query_text}")
     
     # 상태 필터
     if search_params.status:
@@ -76,6 +125,7 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
     
     try:
         logger.debug(f"Elasticsearch 검색 실행 - 페이지: {search_params.page}, 사이즈: {search_params.size}")
+        logger.debug(f"최종 쿼리: {query}")
         
         # 검색 실행
         response = es_client.search(
@@ -88,7 +138,21 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                     {"_score": {"order": "desc"}},
                     {"applicationDate": {"order": "desc"}}
                 ],
-                "_source": True
+                "_source": True,
+                "highlight": {
+                    "fields": {
+                        "productName": {
+                            "number_of_fragments": 0,
+                            "pre_tags": ["<mark>"],
+                            "post_tags": ["</mark>"]
+                        },
+                        "productName_chosung": {
+                            "number_of_fragments": 0,
+                            "pre_tags": ["<mark>"],
+                            "post_tags": ["</mark>"]
+                        }
+                    }
+                }
             }
         )
         
@@ -101,6 +165,11 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
         results = []
         for hit in hits:
             source = hit["_source"]
+            
+            # 하이라이트 정보 추가
+            if "highlight" in hit:
+                source["highlight"] = hit["highlight"]
+            
             # Pydantic 모델로 변환
             results.append(source)
         

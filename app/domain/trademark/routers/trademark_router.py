@@ -8,8 +8,10 @@ from loguru import logger
 
 from app.domain.trademark.schemas.trademark_search_params import TrademarkSearchParams
 from app.domain.trademark.schemas.trademark_response import TrademarkResponse
+from app.domain.trademark.schemas.autocomplete_schema import AutocompleteResponse
 from app.domain.trademark.services.search_trademarks import search_trademarks
 from app.domain.trademark.services.load_trademark_data import load_trademark_data
+from app.domain.trademark.services.autocomplete_service import get_autocomplete_suggestions
 from app.core.exceptions import (
     SearchQueryError,
     DataLoadingError,
@@ -63,6 +65,35 @@ async def search_trademark_endpoint(
     except Exception as e:
         logger.error(f"예상치 못한 검색 오류: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="서버 오류가 발생했습니다")
+
+@router.get("/autocomplete", response_model=AutocompleteResponse)
+async def autocomplete_endpoint(
+    query: str = Query(..., min_length=1, description="검색어"),
+    size: int = Query(10, ge=1, le=20, description="반환할 제안 수")
+) -> AutocompleteResponse:
+    """상표명 자동완성 API
+    
+    초성 검색, 오타 교정, n-gram 기반 유사 문자열 매칭을 지원합니다.
+    """
+    try:
+        logger.info(f"자동완성 요청 - 검색어: '{query}', 크기: {size}")
+        
+        result = await get_autocomplete_suggestions(query, size)
+        
+        logger.info(f"자동완성 완료 - {result.total}개 제안")
+        
+        return result
+    
+    except SearchQueryError as e:
+        logger.error(f"자동완성 쿼리 오류: {str(e)}")
+        raise e
+    except IndexNotFoundError as e:
+        logger.error(f"인덱스 없음 오류: {str(e)}")
+        raise e
+    except Exception as e:
+        logger.error(f"예상치 못한 자동완성 오류: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="서버 오류가 발생했습니다")
+
 
 
 @router.post("/load-data")

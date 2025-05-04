@@ -77,12 +77,29 @@ def setup_logging():
         enqueue=True
     )
     
+    # 초성 검색 로그 파일 (추가)
+    logger.add(
+        f"{log_dir}/trademark_api_chosung_{datetime.now().strftime('%Y%m%d')}.log",
+        rotation="1 day",
+        retention="7 days",
+        compression="zip",
+        format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level: <8} | {name}:{function}:{line} - {message}",
+        filter=lambda record: "chosung" in record["message"].lower(),
+        level="DEBUG",
+        enqueue=True
+    )
+    
     return logger
 
 
 def get_performance_logger():
     """성능 로깅을 위한 전용 로거"""
     return logger.bind(performance=True)
+
+
+def get_chosung_logger():
+    """초성 검색 로깅을 위한 전용 로거"""
+    return logger.bind(chosung=True)
 
 
 # 로깅 레벨 설정
@@ -99,27 +116,3 @@ def set_log_level(level: str):
         logger.info(f"로그 레벨이 {level}로 변경되었습니다.")
     else:
         logger.warning(f"유효하지 않은 로그 레벨: {level}")
-
-
-# 로그 사용 예시를 위한 함수들
-def log_examples():
-    """로깅 사용 예시"""
-    # 기본 로깅
-    logger.debug("디버그 메시지 - 개발 중 상세 정보")
-    logger.info("일반 정보 메시지")
-    logger.warning("경고 메시지")
-    logger.error("에러 메시지")
-    logger.critical("치명적 오류 메시지")
-    
-    # 예외와 함께 로깅
-    try:
-        1 / 0
-    except Exception as e:
-        logger.exception("예외 발생 - 스택 트레이스와 함께 로깅")
-    
-    # 성능 로깅
-    perf_logger = get_performance_logger()
-    perf_logger.info("API 응답 시간: 0.125초")
-    
-    # 사용자 정의 필드와 함께 로깅
-    logger.bind(user_id="user123", request_id="req456").info("사용자별 요청 처리")

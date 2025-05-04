@@ -15,8 +15,8 @@ from loguru import logger
 from app.core.config import settings
 from app.core.elasticsearch import es_client
 from app.core.logging_config import setup_logging, get_performance_logger
-from app.domain.trademark.index.create_trademark_index import create_trademark_index
-from app.domain.trademark.routers import trademark_router
+from app.domain.trademark.index import create_trademark_index
+from app.domain.trademark.routers import trademark_router 
 
 # 로깅 설정
 setup_logging()
