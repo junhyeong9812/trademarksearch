@@ -2,15 +2,15 @@
 상표 검색 함수
 
 이 모듈은 검색 매개변수에 따라 상표 데이터를 검색하는 함수를 제공합니다.
-초성 검색 기능이 포함되어 있습니다.
+초성 검색 및 발음 변환 기능이 포함되어 있습니다.
 """
-from typing import Dict, Any
+from typing import Dict, Any, List
 from elasticsearch import NotFoundError
 from loguru import logger
 
 from app.core.elasticsearch import es_client
 from app.core.config import settings
-from app.domain.trademark.schemas.trademark_search_params import TrademarkSearchParams
+from app.domain.trademark.schemas.trademark_search_params import TrademarkSearchParams, SortOption
 from app.core.exceptions import SearchQueryError, IndexNotFoundError, ElasticsearchConnectionError
 from app.domain.trademark.services.chosung_utils import is_chosung_query, has_korean
 
@@ -37,7 +37,8 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
     query = {
         "bool": {
             "must": [],
-            "filter": []
+            "filter": [],
+            "should": []
         }
     }
     
@@ -63,26 +64,85 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                 }
             })
         else:
-            # 일반 검색인 경우
-            query["bool"]["must"].append({
-                "multi_match": {
-                    "query": query_text,
-                    "fields": ["productName^3", "productName.ngram^2", "productNameEng^2", "productNameEng.ngram"],
-                    "type": "best_fields"
+            # 일반 검색인 경우 - should 절 구성
+            should_clauses = []
+            
+            # 1. 한글 상표명 검색 (null이 아닌 경우)
+            should_clauses.append({
+                "bool": {
+                    "must": [
+                        {
+                            "exists": {
+                                "field": "productName"
+                            }
+                        },
+                        {
+                            "multi_match": {
+                                "query": query_text,
+                                "fields": ["productName^3", "productName.ngram^2"],
+                                "type": "best_fields"
+                            }
+                        }
+                    ]
                 }
             })
+            
+            # 2. 영문 상표명 검색 (null이 아닌 경우)
+            should_clauses.append({
+                "bool": {
+                    "must": [
+                        {
+                            "exists": {
+                                "field": "productNameEng"
+                            }
+                        },
+                        {
+                            "multi_match": {
+                                "query": query_text,
+                                "fields": ["productNameEng^2", "productNameEng.ngram"],
+                                "type": "best_fields"
+                            }
+                        }
+                    ]
+                }
+            })
+            
+            # 3. 영문 상표명의 한글 발음 검색 (null이 아닌 경우)
+            should_clauses.append({
+                "bool": {
+                    "must": [
+                        {
+                            "exists": {
+                                "field": "productNameEngPronunciation"
+                            }
+                        },
+                        {
+                            "match": {
+                                "productNameEngPronunciation": {
+                                    "query": query_text,
+                                    "boost": 2.5  # 발음 일치에 가중치 부여
+                                }
+                            }
+                        }
+                    ]
+                }
+            })
+            
+            # 최소 하나의 should 절이 매칭되어야 함
+            query["bool"]["should"] = should_clauses
+            query["bool"]["minimum_should_match"] = 1
             
             # 한글이 포함된 경우 초성 필드도 부분적으로 검색
             if has_korean_chars:
                 logger.debug(f"한글 포함 - 초성 부분 검색도 활성화")
-                query["bool"]["should"] = [{
+                query["bool"]["should"].append({
                     "match": {
                         "productName_chosung": {
                             "query": query_text,
                             "boost": 1.0
                         }
                     }
-                }]
+                })
         
         logger.debug(f"검색어 적용: {query_text}")
     
@@ -123,6 +183,10 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
     # 페이징 처리
     from_idx = (search_params.page - 1) * search_params.size
     
+    # 정렬 처리
+    sort_list = build_sort_options(search_params.sort)
+    logger.debug(f"정렬 옵션: {sort_list}")
+    
     try:
         logger.debug(f"Elasticsearch 검색 실행 - 페이지: {search_params.page}, 사이즈: {search_params.size}")
         logger.debug(f"최종 쿼리: {query}")
@@ -134,10 +198,7 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                 "query": query,
                 "from": from_idx,
                 "size": search_params.size,
-                "sort": [
-                    {"_score": {"order": "desc"}},
-                    {"applicationDate": {"order": "desc"}}
-                ],
+                "sort": sort_list,
                 "_source": True,
                 "highlight": {
                     "fields": {
@@ -147,6 +208,16 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                             "post_tags": ["</mark>"]
                         },
                         "productName_chosung": {
+                            "number_of_fragments": 0,
+                            "pre_tags": ["<mark>"],
+                            "post_tags": ["</mark>"]
+                        },
+                        "productNameEng": {
+                            "number_of_fragments": 0,
+                            "pre_tags": ["<mark>"],
+                            "post_tags": ["</mark>"]
+                        },
+                        "productNameEngPronunciation": {
                             "number_of_fragments": 0,
                             "pre_tags": ["<mark>"],
                             "post_tags": ["</mark>"]
@@ -191,3 +262,48 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
     except Exception as e:
         logger.error(f"상표 검색 실행 오류: {str(e)}", exc_info=True)
         raise SearchQueryError(detail=str(e))
+
+def build_sort_options(sort_options: List[SortOption] = None) -> List[Dict]:
+    """
+    정렬 옵션 목록을 Elasticsearch 정렬 형식으로 변환
+
+    Args:
+        sort_options (List[SortOption], optional): 정렬 옵션 목록
+
+    Returns:
+        List[Dict]: Elasticsearch 정렬 형식
+    """
+    # 기본 정렬 옵션: 스코어 내림차순
+    default_sort = [
+        {"_score": {"order": "desc"}},
+        {"pid": {"order": "asc"}}  # pid로 2차 정렬
+    ]
+
+    if not sort_options:
+        return default_sort
+
+    es_sort = []
+
+    for option in sort_options:
+        # Elasticsearch 8.x 이상에서는 null_value 설정을 허용하지 않거나 제한하므로 제거
+        # 날짜 필드인 경우 format 지정
+        if option.field in ["applicationDate", "registrationDate"]:
+            sort_option = {
+                option.field: {
+                    "order": option.order,
+                    "format": "yyyy-MM-dd"
+                }
+            }
+        else:
+            sort_option = {
+                option.field: {
+                    "order": option.order
+                }
+            }
+
+        es_sort.append(sort_option)
+
+    # pid로 2차 정렬 항상 추가
+    es_sort.append({"pid": {"order": "asc"}})
+
+    return es_sort

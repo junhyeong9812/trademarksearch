@@ -1,7 +1,7 @@
 """
 상표 검색에 최적화된 완전한 인덱스 매핑
 
-동의어 사전 기능 및 초성 검색 기능이 포함된 매핑 전략
+초성 검색 기능, 발음 변환 기능이 포함된 매핑 전략
 """
 import logging
 
@@ -11,6 +11,15 @@ logger = logging.getLogger(__name__)
 trademark_mapping = {
     "mappings": {
         "properties": {
+            # 고유 ID (pid) 및 조회수 필드 추가
+            "pid": {
+                "type": "keyword"
+            },
+            "viewCount": {
+                "type": "integer",
+                "null_value": 0
+            },
+            
             # 상표명 필드 (한글/영문) - 다중 분석기 활용
             "productName": {
                 "type": "text",
@@ -56,6 +65,18 @@ trademark_mapping = {
                         "type": "text",
                         "analyzer": "english_ngram", 
                         "search_analyzer": "english_search_ngram"
+                    }
+                }
+            },
+            # 영문 상표명의 한글 발음 필드 추가
+            "productNameEngPronunciation": {
+                "type": "text",
+                "analyzer": "nori_standard",
+                "search_analyzer": "nori_search",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
                     }
                 }
             },
