@@ -82,6 +82,12 @@ def process_trademark_data(data: Dict[str, Any]) -> Dict[str, Any]:
             if eng_pronunciation:
                 processed_data['productNameEngPronunciation'] = eng_pronunciation
                 logger.debug(f"영문 상표명 '{data['productNameEng']}'의 한글 발음: {eng_pronunciation}")
+                
+                # 발음의 초성도 추출하여 저장
+                chosung = extract_chosung(eng_pronunciation)
+                if chosung:
+                    processed_data['productNameEngPronunciation_chosung'] = chosung
+                    logger.debug(f"영문 상표명 발음 '{eng_pronunciation}'의 초성: {chosung}")
         except Exception as e:
             logger.error(f"발음 변환 중 오류 발생 - 영문 상표명: {data['productNameEng']}, 오류: {str(e)}", exc_info=True)
     

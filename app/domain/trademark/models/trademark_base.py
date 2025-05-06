@@ -14,6 +14,7 @@ class TrademarkBase(BaseModel):
     productNameEng: Optional[str] = None
     productName_chosung: Optional[str] = None  # 상표명 초성
     productNameEngPronunciation: Optional[str] = None  # 영문 상표명의 한글 발음
+    productNameEngPronunciation_chosung: Optional[str] = None  # 영문 상표명 한글 발음의 초성
     applicationNumber: Optional[str] = None
     applicationDate: Optional[date] = None
     registerStatus: Optional[str] = None

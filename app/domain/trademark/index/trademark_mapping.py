@@ -80,6 +80,12 @@ trademark_mapping = {
                     }
                 }
             },
+            # 상표 데이터 인덱스 매핑 정의에 추가
+            "productNameEngPronunciation_chosung": {
+                "type": "text",
+                "analyzer": "keyword",
+                "search_analyzer": "keyword"
+},
             
             # 출원/등록 번호 필드들
             "applicationNumber": {

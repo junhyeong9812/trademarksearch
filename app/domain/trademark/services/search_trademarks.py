@@ -53,16 +53,30 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
         logger.debug(f"쿼리 분석 - 초성 전용: {chosung_only}, 한글 포함: {has_korean_chars}")
         
         if chosung_only:
-            # 초성 검색인 경우
+            # 초성 검색인 경우 - 한글 상표명과 영문 상표명 발음의 초성 모두 검색
             logger.debug(f"초성 검색 모드 적용: {query_text}")
-            query["bool"]["must"].append({
-                "match_phrase_prefix": {
-                    "productName_chosung": {
-                        "query": query_text,
-                        "boost": 5.0
+            
+            query["bool"]["should"] = [
+                # 한글 상표명 초성 검색
+                {
+                    "match_phrase_prefix": {
+                        "productName_chosung": {
+                            "query": query_text,
+                            "boost": 5.0
+                        }
+                    }
+                },
+                # 영문 상표명 한글 발음 초성 검색 (추가된 부분)
+                {
+                    "match_phrase_prefix": {
+                        "productNameEngPronunciation_chosung": {
+                            "query": query_text,
+                            "boost": 4.0
+                        }
                     }
                 }
-            })
+            ]
+            query["bool"]["minimum_should_match"] = 1
         else:
             # 일반 검색인 경우 - should 절 구성
             should_clauses = []
@@ -128,6 +142,27 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                 }
             })
             
+            # 4. 영문 상표명의 한글 발음 초성 검색 (null이 아닌 경우) - 추가된 부분
+            should_clauses.append({
+                "bool": {
+                    "must": [
+                        {
+                            "exists": {
+                                "field": "productNameEngPronunciation_chosung"
+                            }
+                        },
+                        {
+                            "match": {
+                                "productNameEngPronunciation_chosung": {
+                                    "query": query_text,
+                                    "boost": 2.0
+                                }
+                            }
+                        }
+                    ]
+                }
+            })
+            
             # 최소 하나의 should 절이 매칭되어야 함
             query["bool"]["should"] = should_clauses
             query["bool"]["minimum_should_match"] = 1
@@ -140,6 +175,15 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                         "productName_chosung": {
                             "query": query_text,
                             "boost": 1.0
+                        }
+                    }
+                })
+                # 영문 상표명 한글 발음의 초성도 검색 - 추가된 부분
+                query["bool"]["should"].append({
+                    "match": {
+                        "productNameEngPronunciation_chosung": {
+                            "query": query_text,
+                            "boost": 0.8
                         }
                     }
                 })
@@ -218,6 +262,11 @@ async def search_trademarks(search_params: TrademarkSearchParams) -> Dict[str, A
                             "post_tags": ["</mark>"]
                         },
                         "productNameEngPronunciation": {
+                            "number_of_fragments": 0,
+                            "pre_tags": ["<mark>"],
+                            "post_tags": ["</mark>"]
+                        },
+                        "productNameEngPronunciation_chosung": {
                             "number_of_fragments": 0,
                             "pre_tags": ["<mark>"],
                             "post_tags": ["</mark>"]
