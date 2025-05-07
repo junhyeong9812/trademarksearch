@@ -25,6 +25,7 @@
 
    - Elasticsearch는 9200 포트에서 실행됩니다
    - Kibana는 5601 포트에서 실행됩니다
+   - Kibana구동 후 Elasticsearch를 실행합니다.
 
 2. **Python 환경 설정 및 API 서버 실행** (로컬 개발용):
 
